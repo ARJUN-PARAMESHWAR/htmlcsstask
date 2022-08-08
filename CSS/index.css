@@ -1263,6 +1263,7 @@ td {
   border-radius: 6px;
   box-shadow: 1px 1px 1px 2px #8080803b;
 }
+
 .box11_0 {
   float: left;
   width: 100%;
@@ -1289,12 +1290,33 @@ td {
 
 .box11_2 {
   float: left;
+  position: relative;
 }
 
 #donut_single {
   width: 301px;
   height: 310px;
   margin: 10%;
+}
+
+.donutdiv{
+  float:left;
+  width:100%;
+  position:absolute;
+  top:45%;
+  left:40%;
+  color:#449d42;
+  font-size: large;
+}
+
+.donutdiv_1{
+  float:left;
+  position:absolute;
+  top:51%;
+  left:55%;
+  color:#449d42;
+  font-size: large;
+  font-weight: 500 ;
 }
 
 .box12 {
@@ -1618,6 +1640,16 @@ td {
     margin: 10% 0 10% 56%;
   }
 
+  .donutdiv{
+  top: 45%;
+  left: 85%;
+  }
+
+  .donutdiv_1{
+    top: 50%;
+    left: 100%;
+  }
+
   .box12 {
     width: 90%;
     margin: 10px 5%;
@@ -1838,6 +1870,16 @@ td {
 
   #donut_single {
     margin: 10% 3% 10% 3%;
+  }
+
+  .donutdiv_1{
+    top: 51%;
+    left: 48%;
+  }
+
+  .donutdiv{
+    top: 45%;
+    left: 32%;
   }
 
   .box12 {
@@ -2308,6 +2350,16 @@ td {
     margin: 10% 3% 10% 71%;
   }
 
+  .donutdiv{
+    top: 45%;
+    left: 100%;
+  }
+
+  .donutdiv_1{
+    top: 52%;
+    left: 115%;
+  }
+
   .box12 {
     width: 100%;
     margin: 20px 0 0 0;
@@ -2533,6 +2585,16 @@ td {
 
   #donut_single {
     margin: 10% 3% 10% 40%;
+  }
+
+  .donutdiv{
+    top: 46%;
+    left: 69%;
+  }
+
+  .donutdiv_1{
+      top: 52%;
+      left: 85%;
   }
 
   .box12 {
