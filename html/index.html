@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/index.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Traffic1', 'Traffic2'],
+        [' ', 100, 40],
+        [' ', 57, 60],
+        [' ', 66, 12],
+        [' ', 103, 54]
+      ]);
+
+      var options = {
+
+        hAxis: {},
+        vAxis: { minValue: 0 }
+      };
+
+      var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Effort', 'Amount given'],
+        ['Mozilla Firefox', 40],
+        ['Google Chrome', 30],
+        ['Brave', 30],
+
+      ]);
+
+      var options = {
+        pieHole: 0.7,
+        pieSliceTextStyle: {
+          color: 'black',
+        },
+        legend: 'none'
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { packages: ['corechart', 'line'] });
+    google.charts.setOnLoadCallback(drawCrosshairs);
+
+    function drawCrosshairs() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number');
+      data.addColumn('number');
+      data.addColumn('number');
+
+      data.addRows([
+        [0, 0, 5], [1, 10, 5], [2, 23, 15], [3, 17, 9], [4, 18, 10], [5, 9, 5],
+        [6, 11, 3], [7, 27, 19], [8, 33, 25], [9, 40, 32], [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+      var options = {
+        hAxis: {
+
+        },
+        vAxis: {
+
+        },
+        colors: ['#a52714', '#097138'],
+        crosshair: {
+          color: '#000',
+          trigger: 'selection'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('charts_div'));
+
+      chart.draw(data, options);
+      chart.setSelection([{ row: 38, column: 1 }]);
+
+    }
+
+  </script>
+
+  <script>
+    let plus = true;
+
+    function addNewClass(event) {
+      var element = event.target.id;
+      var temp = document.getElementById(`${element}`);
+      if (element != "plus1") {
+
+        if (plus === true) {
+
+          temp.classList.add('fa-plus-large_rotateEffect');
+          plus = false;
+
+        }
+
+        else if (plus === false) {
+          temp.classList.remove('fa-plus-large_rotateEffect');
+          plus = true;
+
+        }
+
+      }
+
+      else {
+
+        if (plus === true) {
+
+          temp.classList.remove('fa-plus-large_rotateEffect1');
+          plus = false;
+
+        }
+
+        else if (plus === false) {
+          temp.classList.add('fa-plus-large_rotateEffect1');
+          plus = true;
+
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <div class="baseContainer">
+
+    <div class="menuBar">
+
+      <div class="menuBarPart1">
+
+        <div class="backendLogo">
+          <a href="../html/index.html"><img src="../images/logo.png" alt="BackEnd"></a>
+        </div>
+
+
+
+      </div>
+
+
+      <div class="menuIcon">
+        <script src="../JS/menuIcon.js"></script>
+        <div class="fa-solid fa-bars" onClick="dropmenu()"></div>
+      </div>
+
+      <div class="menuBarPart2">
+
+        <div class="menuBarIcons">
+
+
+          <div>
+            <span class="fa-solid fa-magnifying-glass fa-flip-horizontal iconProperties"> </span>
+
+          </div>
+
+          <div>
+
+            <span class="fa-light fa-envelope iconProperties"></span>
+            <span class="icon_badge">10</span>
+
+          </div>
+
+          <div>
+            <span class="fa-duotone fa-comments iconProperties"></span>
+            <span class="icon_badge">8</span>
+          </div>
+          <div>
+            <span class="fa-solid fa-up-right-and-down-left-from-center iconProperties"></span>
+          </div>
+
+          <img src="../images/profilepic.png" class="profilepic">
+          <span class="fa-solid fa-caret-down"></span>
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sidePanel">
+
+      <div class="searchBar">
+
+        <input id="text1" placeholder="  Search..." class="inputBar">
+
+        <span onClick="search()" class="searchButton"><span class="fa fa-search fa-flip-horizontal"
+            style="color: #fff; cursor: pointer;"></span></span>
+
+        <script>
+          function search() {
+
+            var str = document.getElementById("text1").value;
+            alert("You have entered:" + str);
+
+          }
+
+        </script>
+
+      </div>
+
+      <div class="sidePanelElements">
+        <div class="sidePanelElements_0">
+
+          <details open>
+
+            <summary class="headerSummary">
+              <span class="fa-light fa-compass iconsOfSidePanel"></span>
+              <span class="sidePanelMenu">MAIN MENU</span>
+            </summary>
+
+            <details open>
+              <summary>
+                <span class="fa-solid fa-circle-small "></span>
+                <span class="sidePanelMenu0">Dashboard</span>
+                <span class="fa-solid fa-plus-large fa-plus-large_rotateEffect1" id="plus1"
+                  onclick="addNewClass(event)"></span>
+              </summary>
+
+              <div class=" sidePanelMenu1">
+
+                <details>
+                  <summary class="innerSummary">
+                    <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                    <span class="sidePanelMenu2">Dashboard 1</span>
+                  </summary>
+
+                  <summary>
+                    <span class="fa-solid fa-circle-small fa-special1-smallcircle"></span>
+                    <a class="sidePanelMenu3" href="https://en.wikipedia.org/wiki/Dashboard_(business)">DB
+                      Business</a>
+                  </summary>
+
+                </details>
+
+              </div>
+
+              <div class="sidePanelMenu1">
+                <details>
+                  <summary>
+                    <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                    <span class="sidePanelMenu2">Dashboard 2</span>
+                  </summary>
+
+                  <summary>
+                    <span class="fa-solid fa-circle-small fa-special1-smallcircle"></span>
+                    <a class="sidePanelMenu3" href="https://www.adjust.com/glossary/dashboard/">Details</a>
+                  </summary>
+
+                </details>
+
+              </div>
+              <div class="sidePanelMenu1">
+                <details>
+                  <summary>
+                    <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                    <span class="sidePanelMenu2">Dashboard 3</span>
+                  </summary>
+
+                  <summary>
+                    <span class="fa-solid fa-circle-small fa-special1-smallcircle"></span>
+
+                    <a class="sidePanelMenu3" href="https://myaccount.google.com/intro/dashboard?hl=en">G DBoard</a>
+                  </summary>
+
+                </details>
+
+              </div>
+
+            </details>
+
+          </details>
+
+        </div>
+
+        <div class="sidePanelElements_1">
+
+          <details open>
+            <summary class="headerSummary">
+              <span class="fa-light fa-memo fa-flip-horizontal fa-flip-vertical iconsOfSidePanel"></span>
+              <span style="margin-left:16px" class="sidePanelMenu">LAYOUT PAGES</span>
+            </summary>
+
+            <details>
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">General Pages</span>
+                <span class="fa-solid fa-plus-large" id="plus2" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.facebook.com">Facebook</a>
+              </summary>
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.twitter.com">Twitter</a>
+              </summary>
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.instagram.com">Instagram</a>
+              </summary>
+
+            </details>
+
+            <details>
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Cookie Consent</span>
+                <span class="fa-solid fa-plus-large" id="plus3" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <div class="sidePanelMenu3" onClick="cookie()">Accept all cookies </div>
+              </summary>
+
+            </details>
+
+            <details>
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">eCommerce</span>
+                <span class="fa-solid fa-plus-large" id="plus4" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.flipkart.com">Flipkart</a>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.amazon.in">Amazon</a>
+              </summary>
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.snapdeal.com">Snapdeal</a>
+              </summary>
+
+            </details>
+
+            <details>
+
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Apps</span>
+                <span class="fa-solid fa-plus-large" id="plus5" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.googleplay.com">Playstore</a>
+              </summary>
+
+            </details>
+
+            <details>
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Maps</span>
+                <span class="fa-solid fa-plus-large" id="plus6" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.googlemaps.com">GMaps</a>
+              </summary>
+
+            </details>
+
+            <details>
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Users</span>
+                <span class="fa-solid fa-plus-large" id="plus7" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <div class="sidePanelMenu3">User 1</div>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <div class="sidePanelMenu3">User 2</div>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <div class="sidePanelMenu3">User 3</div>
+              </summary>
+
+
+            </details>
+
+          </details>
+
+
+
+        </div>
+        <div class="sidePanelElements_2">
+
+
+          <details open>
+
+            <summary class="headerSummary">
+              <span class="fa-light fa-atom iconsOfSidePanel"></span>
+              <span class="sidePanelMenu">COMPONENTS</span>
+            </summary>
+
+            <details>
+
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Basic UI</span>
+                <span class="fa-solid fa-plus-large" id="plus8" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://xd.adobe.com/ideas/process/ui-design/">UI Design</a>
+              </summary>
+
+            </details>
+
+            <details>
+
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Advanced UI</span>
+                <span class="fa-solid fa-plus-large" id="plus9" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.learnui.design/">UI Training</a>
+              </summary>
+
+            </details>
+
+            <details>
+
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Elements</span>
+                <span class="fa-solid fa-plus-large" id="plus10" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://element.io/">Element Home</a>
+              </summary>
+
+            </details>
+
+            <details>
+
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Forms</span>
+                <span class="fa-solid fa-plus-large" id="plus11 " onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://www.google.com/forms/about/">G-Forms</a>
+              </summary>
+
+            </details>
+
+            <details>
+
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Tables</span>
+                <span class="fa-solid fa-plus-large" id="plus12" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://tables.area120.google.com/about">G-Tables</a>
+              </summary>
+
+            </details>
+
+            <details>
+
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Charts</span>
+                <span class="fa-solid fa-plus-large" id="plus13" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://developers.google.com/chart">G-Charts</a>
+              </summary>
+
+            </details>
+
+            <details>
+
+              <summary>
+                <span class="fa-solid fa-circle-small"></span>
+                <span class="sidePanelMenu0">Widgets</span>
+                <span class="fa-solid fa-plus-large" id="plus14" onclick="addNewClass(event)"></span>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://dayspedia.com/time/online/">Clock
+                </a>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3"
+                  href="https://www.worldweatheronline.com/chennai-weather/tamil-nadu/in.aspx">Weather</a>
+              </summary>
+
+              <summary>
+                <span class="fa-solid fa-circle-small fa-special-smallcircle"></span>
+                <a class="sidePanelMenu3" href="https://news.google.com/topstories?hl=en-IN&gl=IN&ceid=IN:en">News</a>
+              </summary>
+
+
+            </details>
+
+
+          </details>
+
+
+        </div>
+
+        <div class="sidePanelElements_3">
+          <span class="fa-light fa-unlock color"></span>
+          <span class="fa-light fa-key color fa-flip-horizontal fa-flip-vertical"></span>
+          <span class="fa-light fa-lock color"></span>
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+    <div class="dashboardPanel">
+
+      <div class="dashboardPanelTop">
+
+        <div class="dashboard">
+          Dashboard
+
+        </div>
+
+
+        <div class="dashboardIcons">
+          <span> Dashboard 1 </span>
+          <span>/</span>
+          <span>Dashboard</span>
+          <span>/</span>
+          <span>Home</span>
+          <span class="fa-solid fa-house-chimney fa-flip-horizontal" aria-hidden="true" style="height:20px;"></span>
+
+        </div>
+      </div>
+
+      <div class="dashboardPanelBottom">
+
+        <div class="boxI">
+
+          <div class="box1">
+
+            <div class="box1_0">
+
+              <span style="float:left;" class="spanforheaders">Traffic views</span>
+              <span class="fa-solid fa-xmark spanforminimizeandclose"></span>
+              <span class="fa-solid fa-dash spanforminimizeandclose"></span>
+
+            </div>
+
+            <div class="box1_1">
+              <div id="chart_div" style="width: 100%; height: 500px;"></div>
+
+            </div>
+
+            <div class="box1_2">
+              <div class="box1_2_0">
+                <div class="box1_2_0_1">
+                  <span class="fa fa-eye" aria-hidden="true"></span>
+                  <div>Visitors</div>
+
+                </div>
+
+                <div class="box1_2_0_2">
+                  <div class="circularProgressBar">
+
+                    <div class="circle1">
+                      <div class="circlequadrant">
+
+                      </div>
+
+                    </div>
+
+                    <div class="circle2">
+                      <div class="visitorsCount">1500</div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="box1_2_1">
+                <div>Today</div>
+                <progress value="60" max="100" class="progressBar0" id="progressBar1"> </progress>
+                <div>Yesterday</div>
+                <progress value="80" max="100" class="progressBar0" id="progressBar2"> </progress>
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <div class="box2">
+            <div class="box2_1" style="margin-top:0px;">
+
+              <div class="padding1forbox2">
+                <div class="padding3forbox2">Mail</div>
+                <div>6,432</div>
+              </div>
+
+              <div class="padding1forbox2">
+                <div class="padding3forbox2">Storage</div>
+                <div>91%</div>
+              </div>
+
+              <div class="padding2forbox2">
+                <span class="fa fa-envelope iconsofbox2" aria-hidden="true"> </span>
+
+              </div>
+            </div>
+
+            <div class="box2_2">
+
+              <div class="padding1forbox2">
+                <div class="padding3forbox2">Task</div>
+                <div>7,245</div>
+              </div>
+
+              <div class="padding1forbox2">
+                <div class="padding3forbox2">Storage</div>
+                <div>59%</div>
+              </div>
+
+              <div class="padding2forbox2">
+                <div class="fa-solid fa-bars-progress iconsofbox2" aria-hidden="true"> </div>
+              </div>
+
+            </div>
+
+            <div class="box2_3">
+
+              <div class="padding1forbox2">
+                <div class="padding3forbox2">Space</div>
+                <div>97.8%</div>
+              </div>
+
+              <div class="padding1forbox2">
+                <div class="padding3forbox2">Remain</div>
+                <div>2.2%</div>
+              </div>
+
+              <div class="padding2forbox2">
+                <div class="fa-solid fa-box-archive iconsofbox2" aria-hidden="true"> </div>
+              </div>
+
+            </div>
+
+            <div class="box2_4">
+
+              <div class="padding1forbox2">
+                <div class="padding3forbox2">Outlay</div>
+                <div>1,943k</div>
+              </div>
+
+              <div class="padding1forbox2">
+                <div class="padding3forbox2">Storage</div>
+                <div>75%</div>
+              </div>
+
+              <div class="padding2forbox2">
+                <span class="fa-regular fa-folder-open iconsofbox2" aria-hidden="true"> </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="boxII">
+
+          <div class="box3">
+
+            <div class="box3_1">
+
+              <span class="spanforheaders">Clock time</span>
+              <span class="fa-solid fa-xmark spanforminimizeandclose"></span>
+              <span class="fa-solid fa-dash spanforminimizeandclose"></span>
+
+            </div>
+
+            <div class="box3_2">
+              <div class="box3_2_1">
+                <div class="clock">
+                  <div class="hourHand"></div>
+                  <div class="minuteHand"></div>
+                  <div class="secondsHand"></div>
+                </div>
+                <script src="../JS/clock.js"></script>
+              </div>
+            </div>
+
+            <div class="box3_3">
+              <div class="box3_3_0">
+                <div>
+                  <div class="fa-thin fa-clock-nine box3_3Elements"></div>
+                  <div> Clock </div>
+                </div>
+
+                <div>
+                  <div class="fa-thin fa-alarm-clock box3_3Elements"></div>
+                  <div> Alarm </div>
+                </div>
+
+                <div>
+                  <div class="fa-thin fa-timer box3_3Elements"></div>
+                  <div> Timer </div>
+                </div>
+                <div>
+                  <div class="fa-thin fa-watch box3_3Elements"></div>
+                  <div>Watch</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="box4">
+            <div class="box4_0">
+              <img src="../images/flower.png" alt="flower" class="flower">
+            </div>
+
+            <div class="box4_1">
+              Flower
+            </div>
+
+            <div class="box4_2">
+              <span class="fa-regular fa-thumbs-up spanofbox4_2"> 47</span>
+              <span class=" fa-light fa-comment spanofbox4_2" style="padding:10px;">
+                85</span>
+              <span class="viewButton"><button class="viewButton">View</button></span>
+            </div>
+
+
+
+          </div>
+
+
+          <div class="box5">
+
+            <div class="box5_0">
+              <span style="float:left;" class="spanforheaders">Message</span>
+
+              <span class="fa-solid fa-xmark spanforminimizeandclose"></span>
+              <span class="fa-solid fa-dash spanforminimizeandclose"></span>
+
+
+            </div>
+
+
+            <div class="box5_1">
+
+              <div class="box5_1_0">
+
+                <div class="square">
+                  <img class="box5_1_0image" src="../images/shane.png" alt="beardguy">
+                  <p>
+                  <div class="quotes">One morning, when Gregor Samsa woke from </div>
+
+                  <div class="quotes">troubled dreams, he found himself.
+                  </div>
+
+                  </p>
+                  <div class="line"><br></div>
+                  <p class="quotes1">Shane Handcomb
+                  </p>
+                  <p class="quotes2">Web Developer </p>
+
+                  <div class="box5_1_0_0">
+
+                    <span class="fa-duotone fa-apostrophe fa-flip-horizontal fa-flip-vertical"
+                      style="float:left;"></span>
+                    <span class="fa-duotone fa-apostrophe fa-flip-horizontal fa-flip-vertical"
+                      style="float:left;"></span>
+                    <span class="fa-duotone fa-apostrophe closeapostrophe" style="float:right;" ;></span>
+                    <span class="fa-duotone fa-apostrophe closeapostrophe" style="float:right;"></span>
+
+
+                  </div>
+
+                </div>
+
+
+
+              </div>
+
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="boxIII">
+
+
+          <div class="box6">
+
+            <div class="box6_0">
+              <span style="float:left;" class="spanforheaders">Monthly stock</span>
+              <span class="fa-solid fa-xmark spanforminimizeandclose"></span>
+              <span class="fa-solid fa-dash spanforminimizeandclose"></span>
+            </div>
+
+            <div class="box6_1">
+              <div id="charts_div" style="width:100%;height:500px;float:left;"></div>
+            </div>
+
+          </div>
+
+          <div class="box7">
+
+            <div class="box7_0">
+              <div class="london">
+                <span>London</span>
+              </div>
+
+              <div class="box7_0_1">
+                <div class="dayTime">
+                  <div>Today</div>
+                  <span>21:35</span>
+                  <span>PM</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="box7_1">
+              <span class="fa-light fa-cloud-hail-mixed"></span>
+              <span class="fa-light fa-sun-bright fa-sun-bright1"></span>
+            </div>
+
+            <div class="box7_2">
+              <span class="fa-solid fa-sun-bright"></span>
+
+              <span style="margin-left: 20px;">Weather</span>
+            </div>
+
+
+            <div class="box7_3">
+              <div class="box7_3_0">
+                <span class="degrees">22</span>
+                <span class="fa-solid fa-0 fa-zero"></span>
+                <span class="fa-light fa-cloud-sun fa-flip-horizontal"></span>
+              </div>
+            </div>
+
+            <div class="box7_4">
+              <div class="box7_4_0">
+                <span style="float:left;font-size: 30px;color:white;margin-top: 4px;">Monday</span>
+                <span style="float:left;font-size: 30px;color:white;margin-left: 6px;">15<sup>th</sup></span>
+                <span style="font-size: 24px;float:right;color:white;margin-top: 12px;">3mph/65<sup><span
+                      class="fa-solid fa-0" style="font-size:8px;color:white;float:right; "></span></sup> </span>
+              </div>
+
+            </div>
+
+            <div class="box7_5">
+
+              <div class="box7_5_1">
+
+                <div class="days" style="border-left:none;">
+                  <div> Tue </div>
+                  <div class="fa-light fa-clouds cloud"></div>
+                  <div class="days1">21<sup><span class="fa-solid fa-circle degree"></span>
+                    </sup></div>
+                </div>
+
+                <div class="days">
+                  <div>Wed</div>
+                  <div class="fa-light fa-bolt"></div>
+                  <div class="days1">20<sup><span class="fa-solid fa-circle degree"></span>
+                    </sup> </div>
+
+                </div>
+
+                <div class="days">
+                  <div>Thu</div>
+                  <div class="fa-light fa-cloud-moon days" style="font-size: 45px;"></div>
+                  <div class="days1">20<sup><span class="fa-solid fa-circle degree"></span>
+                    </sup> </div>
+
+                </div>
+
+                <div class="days">
+                  <div>Fri</div>
+                  <div class="fa-light fa-moon days" style="font-size: 45px;"></div>
+                  <div class="days1">23<sup><span class="fa-solid fa-circle degree"></span>
+                    </sup> </div>
+
+                </div>
+
+                <div class="days">
+                  <div>Sat</div>
+                  <div class="fa-light fa-sun-bright days" style="font-size: 45px;"></div>
+                  <div class="days1">19<sup><span class="fa-solid fa-circle degree"></span>
+                    </sup> </div>
+
+                </div>
+
+                <div class="days">
+                  <div>Sun</div>
+                  <div class="fa-light fa-cloud-moon-rain days" style="font-size: 45px;"></div>
+                  <div class="days1">19<sup><span class="fa-solid fa-circle degree"></span>
+                    </sup> </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="boxIV">
+
+          <div class="box8">
+
+            <div class="box8_0">
+
+              <div class="box8_x">
+                <div class="numbersofbox8">5.7k</div>
+                <div class="wordsofbox8">Followers</div>
+              </div>
+
+              <div class="box8_y">
+                <span class="fa-brands fa-twitter iconsofbox8"></span>
+              </div>
+
+            </div>
+
+            <div class="box8_1" style="background-color:#de4b39">
+
+              <div class="box8_x">
+                <div class="numbersofbox8">2.6k</div>
+                <div class="wordsofbox8">connect</div>
+              </div>
+
+              <div class="box8_y">
+                <span class="fa-brands fa-google iconsofbox8"></span>
+              </div>
+
+            </div>
+
+            <div class="box8_2" style="background-color:#e24d87">
+
+              <div class="box8_x">
+                <div class="numbersofbox8">5.3k</div>
+                <div class="wordsofbox8">Followers</div>
+              </div>
+
+              <div class="box8_y">
+                <span class="fa-solid fa-basketball iconsofbox8"></span>
+              </div>
+
+            </div>
+
+            <div class="box8_3" style="background-color:#3b5997">
+
+              <div class="box8_x">
+                <div class="numbersofbox8">8.3k</div>
+                <div class="wordsofbox8">Like</div>
+              </div>
+
+              <div class="box8_y">
+                <span class="fa-brands  fa-facebook iconsofbox8"></span>
+              </div>
+
+            </div>
+
+            <div class="box8_4" style="background-color:#00aff0">
+
+              <div class="box8_x">
+                <div class="numbersofbox8">4.4k</div>
+                <div class="wordsofbox8">Join</div>
+              </div>
+
+              <div class="box8_y">
+                <span class="fa-brands fa-skype iconsofbox8"></span>
+              </div>
+
+            </div>
+
+            <div class="box8_5" style="background-color:#8943bf">
+
+              <div class="box8_x">
+                <div class="numbersofbox8">5.9k</div>
+                <div class="wordsofbox8">Connect</div>
+              </div>
+
+              <div class="box8_y">
+                <span class="fa-brands fa-instagram iconsofbox8"></span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="boxV">
+
+          <div class="box9">
+
+            <div class="box9_0">
+              <span class="spanforheaders">Contact details</span>
+              <span class="fa-solid fa-xmark spanforminimizeandclose"></span>
+              <span class="fa-solid fa-dash spanforminimizeandclose"></span>
+            </div>
+
+            <div class="box9_1">
+
+              <div class="box9_1_1">
+
+                <div>
+                  <img class="krayon" src="../images/krayon.png" alt="krayon jin">
+                </div>
+
+                <div style="font-size: 36px;color:#fff">Krayon Jin</div>
+
+                <div>
+                  <span class="designer">Designer</span>
+                </div>
+
+                <div>
+                  <button class="changeProfile">
+                    <a class="changeProfile" onclick="changeProfile()">Change profile</a>
+                  </button>
+                  <script>
+                    function changeProfile() {
+                      alert("You Cannot Change Profile Picture right now.")
+                    }
+                  </script>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="box9_2">
+              <div style="background-color: #3b5997;">
+                <div class="box9_2_0">
+                  <span class="fa-brands brand fa-facebook spanofbox9"></span>
+                  <div class="spanofbox9">344</div>
+                </div>
+
+              </div>
+
+              <div style="background-color: #de4b39;">
+                <div class="box9_2_0">
+                  <span class="fa-brands brand  fa-google spanofbox9">+</span>
+                  <div class="spanofbox9">450</div>
+                </div>
+
+              </div>
+
+              <div style="background-color: #55acef;">
+                <div class="box9_2_0">
+                  <span class="fa-brands brand  fa-twitter spanofbox9"></span>
+                  <div class="spanofbox9">532</div>
+                </div>
+
+              </div>
+
+              <div style="background-color: #0272ba;">
+                <div class="box9_2_0">
+                  <span class="fa-brands brand fa-linkedin spanofbox9"></span>
+                  <div class="spanofbox9">753</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="box10">
+
+            <div class="box10_0">
+              <span class="spanforheaders">Contact details</span>
+              <span class="fa-solid fa-xmark spanforminimizeandclose"></span>
+              <span class="fa-solid fa-dash spanforminimizeandclose"></span>
+            </div>
+
+            <div class="box10_1">
+              <table>
+                <th>ID</th>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Status</th>
+                <th>Action</th>
+                <th>Delete</th>
+                <th>Call</th>
+                <th>Chat</th>
+                <tr>
+                  <td>0</td>
+                  <td>Edmund</td>
+                  <td>25.05.1998</td>
+                  <td>Edmund@example.com</td>
+                  <td>9854220129</td>
+                  <td>
+                    <div class="online">Online</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>29.04.1996</td>
+                  <td>Mark@example.com</td>
+                  <td>8857420123</td>
+                  <td>
+                    <div class="offline">Offline</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>Larry</td>
+                  <td>02.09.1990</td>
+                  <td>Larry@example.com</td>
+                  <td>9854287747</td>
+                  <td>
+                    <div class="online">Online</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Harvinder</td>
+                  <td>11.01.1981</td>
+                  <td>Harvinder@example.com</td>
+                  <td>9879620120</td>
+                  <td>
+                    <div class="offline">Offline</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>Terry</td>
+                  <td>25.08.1985</td>
+                  <td>Terry@example.com</td>
+                  <td>7894320123</td>
+                  <td>
+                    <div class="offline">Offline</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>Jacob</td>
+                  <td>18.05.2000</td>
+                  <td>Jacob@example.com</td>
+                  <td>9879632114</td>
+                  <td>
+                    <div class="online">Online</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>Nicky</td>
+                  <td>15.05.1988</td>
+                  <td>Nicky@example.com</td>
+                  <td>9878932123</td>
+                  <td>
+                    <div class="offline">Offline</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+
+                <tr>
+                  <td>7</td>
+                  <td>James</td>
+                  <td>05.12.1978</td>
+                  <td>James@example.com</td>
+                  <td>9179525012</td>
+                  <td>
+                    <div class="online">Online</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+                  <td>Michael</td>
+                  <td>31.12.1998</td>
+                  <td>Michael@example.com</td>
+                  <td>9803120123</td>
+                  <td>
+                    <div class="online">Online</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td>Ricky</td>
+                  <td>07.08.2001</td>
+                  <td>Ricky@example.com</td>
+                  <td>9879645323</td>
+                  <td>
+                    <div class="online">Online</div>
+                  </td>
+                  <td><span class="fa-solid fa-pen fa-flip-horizontal"></span></td>
+                  <td><span class="fa-solid fa-trash-can"></span></td>
+                  <td><span class="fa-regular fa-phone"></span></td>
+                  <td><span class="fa-regular fa-message"></span></td>
+                </tr>
+              </table>
+
+
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+        <div class="boxVI">
+          <div class="box11">
+            <div class="box11_0">
+              <span class="spanforheaders">Poll activity</span>
+              <span class="fa-solid fa-xmark spanforminimizeandclose"></span>
+              <span class="fa-solid fa-dash spanforminimizeandclose"></span>
+            </div>
+
+            <div class="box11_1">
+
+              <div class="spanfor11_1">Week</div>
+              <div class="spanfor11_1">Months</div>
+              <div class="spanfor11_1">Year</div>
+
+            </div>
+
+            <div class="box11_2">
+              <div id="donut_single">
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="box12">
+
+            <div class="box12_0">
+              <span class="spanforheaders">Testimonial</span>
+              <span class="fa-solid fa-xmark spanforminimizeandclose"></span>
+              <span class="fa-solid fa-dash spanforminimizeandclose"></span>
+            </div>
+
+            <div class="box12_1">
+
+              <img class="Max" src="../images/Max.png" alt="Max">
+
+              <div class="box12_1_0">
+
+                <div class="box12_1_0_0">
+                  <div class="lineheight">Lorem Ipsum dolor sit amet,</div>
+                  <div class="lineheight">consectetur adipiscing elit.Duis </div>
+                  <div class="lineheight"> laoreet ultricies interdum.</div>
+                  <div class="lineheight"> Pellentesque interdum massa.</div>
+                </div>
+
+                <div class="lineheight" style="color:#e7ae54;font-style:italic;font-size:20px">Max Sharp</div>
+                <span style="font-size:17px;color:#b0a392"><i>- Author</i></span>
+                </span>
+
+              </div>
+
+
+            </div>
+
+            <span class="fa-duotone fa-ellipsis ellipsis"></span>
+
+          </div>
+
+
+          <div class="box13">
+            <div class="box13_0">
+              <span class="spanforheaders">Skill</span>
+
+              <span class="fa-solid fa-xmark spanforminimizeandclose"></span>
+              <span class="fa-solid fa-dash spanforminimizeandclose"></span>
+
+
+            </div>
+            <div class="box13_1">
+              <div>
+                <label class="labelsofbox13_1">HTML</label>
+                <progress value="80" max="100" class="progressBar" id="progressBar3"></progress>
+              </div>
+
+              <div>
+                <label class="labelsofbox13_1">CSS</label>
+                <progress value="70" max="100" class="progressBar" id="progressBar4"></progress>
+              </div>
+
+
+              <div>
+                <label class="labelsofbox13_1">WordPress</label>
+                <progress value="60" max="100" class="progressBar" id="progressBar5"></progress>
+              </div>
+
+              <div>
+                <label class="labelsofbox13_1">jQuery</label>
+                <progress value="75" max="100" class="progressBar" id="progressBar6"></progress>
+              </div>
+
+              <div>
+                <label class="labelsofbox13_1">Scss</label>
+                <progress value="40" max="100" class="progressBar" id="progressBar7"></progress>
+              </div>
+
+              <div>
+                <label class="labelsofbox13_1">Php</label>
+                <progress value="50" max="100" class="progressBar" id="progressBar8"></progress>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+        <footer class="footer">
+          <p>Copyright <span class="fa-regular fa-copyright"></span> 2017, All Rights Reserved.</p>
+        </footer>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
