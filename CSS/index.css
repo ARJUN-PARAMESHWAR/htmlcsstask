@@ -1294,7 +1294,6 @@ td {
   border-radius: 6px;
   box-shadow: 1px 1px 1px 2px #8080803b;
 }
-
 .box11_0 {
   float: left;
   width: 100%;
@@ -1330,24 +1329,24 @@ td {
   margin: 10%;
 }
 
-.donutdiv{
-  float:left;
-  width:100%;
-  position:absolute;
-  top:45%;
-  left:40%;
-  color:#449d42;
+.donutdiv {
+  float: left;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  color: #449d42;
   font-size: large;
 }
 
-.donutdiv_1{
-  float:left;
-  position:absolute;
-  top:51%;
-  left:55%;
-  color:#449d42;
+.donutdiv_1 {
+  float: left;
+  position: absolute;
+  top: 51%;
+  left: 55%;
+  color: #449d42;
   font-size: large;
-  font-weight: 500 ;
+  font-weight: 500;
 }
 
 .box12 {
@@ -1671,12 +1670,11 @@ td {
     margin: 10% 0 10% 56%;
   }
 
-  .donutdiv{
-  top: 45%;
-  left: 85%;
+  .donutdiv {
+    top: 46%;
+    left: 87%;
   }
-
-  .donutdiv_1{
+  .donutdiv_1 {
     top: 50%;
     left: 100%;
   }
@@ -1903,14 +1901,13 @@ td {
     margin: 10% 3% 10% 3%;
   }
 
-  .donutdiv_1{
+  .donutdiv_1 {
     top: 51%;
     left: 48%;
   }
-
-  .donutdiv{
+  .donutdiv {
     top: 45%;
-    left: 32%;
+    left: 34%;
   }
 
   .box12 {
@@ -2381,14 +2378,13 @@ td {
     margin: 10% 3% 10% 71%;
   }
 
-  .donutdiv{
+  .donutdiv {
     top: 45%;
-    left: 100%;
+    left: 102%;
   }
-
-  .donutdiv_1{
+  .donutdiv_1 {
     top: 52%;
-    left: 115%;
+    left: 116%;
   }
 
   .box12 {
@@ -2618,14 +2614,13 @@ td {
     margin: 10% 3% 10% 40%;
   }
 
-  .donutdiv{
+  .donutdiv {
     top: 46%;
-    left: 69%;
+    left: 71%;
   }
-
-  .donutdiv_1{
-      top: 52%;
-      left: 85%;
+  .donutdiv_1 {
+    top: 52%;
+    left: 85%;
   }
 
   .box12 {
