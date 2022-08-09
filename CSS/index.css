@@ -1369,12 +1369,97 @@ td {
 
 .box12_1 {
   float: left;
-  width: 89%;
-  background-color: #fae3c4;
-  margin: 5% 5% 0;
-  border-right: 9px solid #f2b7ba;
-  position: relative;
+  width: 90%;
+  margin: 0 5%;
 }
+
+.carousel {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.slides {
+  display: none;
+  width: 100%;
+}
+
+.slider {
+  float: left;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+}
+
+#slider1 {
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #000;
+  float: left;
+  cursor: pointer;
+}
+
+#slider1:hover {
+  background-color: #057684;
+  color: #fff;
+}
+
+#slider2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #000;
+  right: 0;
+  float: left;
+  cursor: pointer;
+}
+
+#slider2:hover {
+  background-color: #057684;
+  color: #fff;
+}
+
+.round_holder {
+  float: left;
+  width: 20%;
+  margin: 0 40%;
+  text-align: center;
+  padding: 10px 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.round {
+  float: left;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  margin: 7%;
+}
+
+.roundColor{
+  background-color: #057684;
+}
+
+.arrow {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.buttonColor {
+  background-color: red;
+}
+
+.buttonWhite {
+  background-color: #fff;
+}
+
 .box13 {
   float: left;
   width: 22.33%;
@@ -1465,22 +1550,6 @@ td {
   display: block;
   text-align: center;
   padding-bottom: 20px;
-}
-
-.box12_1_0_0 {
-  font-size: 20px;
-  color: #85725c;
-  margin: 10px 0 0 0;
-}
-
-.lineheight {
-  line-height: 40px;
-}
-
-.ellipsis {
-  float: left;
-  font-size: 70px;
-  margin-left: 45%;
 }
 
 .spanforminimizeandclose {
