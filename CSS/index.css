@@ -165,7 +165,7 @@
 }
 
 .sidePanelElements > div {
-  padding: 8px 0;
+  padding: 5px 0;
 }
 
 .sidePanelElements_0 {
@@ -225,7 +225,7 @@ details {
 details summary {
   list-style: none;
   float: left;
-  padding: 20px 0 20px 0;
+  padding: 15px 0 15px 0;
 }
 
 details summary span {
@@ -244,22 +244,54 @@ summary {
   border-left: none;
 }
 
-summary:hover {
+.headerSummary:hover {
   background-color: rgb(7, 116, 123);
   cursor: pointer;
 }
 
+summary:hover {
+  background-color: rgb(7, 116, 123);
+  cursor: pointer;
+  color: #fff;
+}
+
 .innerSummary {
-  width: 90%;
-  margin: 0 0 0 6%;
+  width: 87%;
+  margin: 0 0 0 12%;
+  border-left: 1px solid #959595;
+  padding: 15px 0;
+  float: left;
+}
+
+.innerSummary:hover {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+
+.innerSummary1 {
+  float: left;
+  width: 85%;
+  padding: 5px 0;
+  margin-left: 40px !important;
   border-left: 1px solid #959595;
 }
 
+.sidePanelMenu3:hover {
+  color: #fff;
+}
+
+.specialSummary {
+  padding: 0px !important;
+}
 .fa-plus-large {
   float: right;
   margin-right: 27px;
   color: #8d8d8d;
   font-size: 15px;
+}
+
+.fa-plus-large:hover {
+  color: #fff;
 }
 
 .fa-plus-large_rotateEffect {
@@ -304,14 +336,13 @@ summary:hover {
 
 .fa-special-smallcircle {
   float: left;
-  margin-left: 30px !important;
+  /* margin-left: 30px !important; */
   opacity: 0.5;
   color: #909294;
 }
 
 .fa-special1-smallcircle {
   float: left;
-  margin-left: 66px !important;
   opacity: 0.5;
   color: #909294;
 }
