@@ -1438,27 +1438,77 @@
 
             <div class="box12_1">
 
-              <img class="Max" src="../images/Max.png" alt="Max">
+              <div class="carousel">
 
-              <div class="box12_1_0">
-
-                <div class="box12_1_0_0">
-                  <div class="lineheight">Lorem Ipsum dolor sit amet,</div>
-                  <div class="lineheight">consectetur adipiscing elit.Duis </div>
-                  <div class="lineheight"> laoreet ultricies interdum.</div>
-                  <div class="lineheight"> Pellentesque interdum massa.</div>
+                <div>
+                  <img class="slides" src="../images/slide1.png" style="width:100%">
+                  <img class="slides" src="../images/slide2.png" style="width:100%">
+                  <img class="slides" src="../images/slide3.png" style="width:100%">
                 </div>
 
-                <div class="lineheight" style="color:#e7ae54;font-style:italic;font-size:20px">Max Sharp</div>
-                <span style="font-size:17px;color:#b0a392"><i>- Author</i></span>
-                </span>
+                <div class="slider">
+                  <div id="slider1" onclick="plusDivs(-1)">
+
+                    <span class="fa-duotone fa-arrow-left arrow"></span>
+
+                  </div>
+                  <div id="slider2" onclick="plusDivs(1)">
+
+                    <span class="fa-duotone fa-arrow-right arrow"></span>
+
+                  </div>
+                </div>
+
+
+
+                <div class="round_holder">
+                  <span id="r1" class="round roundColor" onclick="currentDiv(1)">
+                  </span>
+                  <span id="r2" class="round roundColor" onclick="currentDiv(2)">
+                  </span>
+                  <span id="r3" class="round roundColor" onclick="currentDiv(3)"> </span>
+
+                </div>
 
               </div>
 
-
             </div>
 
-            <span class="fa-duotone fa-ellipsis ellipsis"></span>
+            <script>
+              var slideIndex = 1;
+              showDivs(slideIndex);
+
+              function plusDivs(n) {
+                showDivs(slideIndex += n);
+              }
+
+              function currentDiv(n, event) {
+                showDivs(slideIndex = n);
+              }
+
+              function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("slides");
+                var dots = document.getElementsByClassName("round");
+                if (n > x.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = x.length }
+                for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";
+                }
+
+                for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace("roundColor", " ");
+                }
+
+                x[slideIndex - 1].style.display = "block";
+
+                dots[slideIndex-1].className += "roundColor";
+              }
+
+
+            </script>
+
+
 
           </div>
 
