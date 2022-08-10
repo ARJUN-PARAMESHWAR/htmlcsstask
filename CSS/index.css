@@ -247,9 +247,10 @@ summary {
 .headerSummary:hover {
   background-color: rgb(7, 116, 123);
   cursor: pointer;
+  color: #fff;
 }
 
-summary:hover {
+.summary_1:hover {
   background-color: rgb(7, 116, 123);
   cursor: pointer;
   color: #fff;
@@ -1443,7 +1444,7 @@ td {
   margin: 7%;
 }
 
-.roundColor{
+.roundColor {
   background-color: #057684;
 }
 

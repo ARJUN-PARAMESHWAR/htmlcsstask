@@ -13,150 +13,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Year', 'Traffic1', 'Traffic2'],
-        [' ', 100, 40],
-        [' ', 57, 60],
-        [' ', 66, 12],
-        [' ', 103, 54]
-      ]);
-
-      var options = {
-
-        hAxis: {},
-        vAxis: { minValue: 0 }
-      };
-
-      var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
-    }
-  </script>
-
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-
-      var data = google.visualization.arrayToDataTable([
-        ['Effort', 'Amount given'],
-        ['Mozilla Firefox', 40],
-        ['Google Chrome', 30],
-        ['Brave', 30],
-
-      ]);
-
-      var options = {
-        pieHole: 0.7,
-        pieSliceTextStyle: {
-          color: 'black',
-        },
-        legend: 'none'
-      };
-
-      var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
-      chart.draw(data, options);
-    }
-  </script>
-
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', { packages: ['corechart', 'line'] });
-    google.charts.setOnLoadCallback(drawCrosshairs);
-
-    function drawCrosshairs() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('number');
-      data.addColumn('number');
-      data.addColumn('number');
-
-      data.addRows([
-        [0, 0, 5], [1, 10, 5], [2, 23, 15], [3, 17, 9], [4, 18, 10], [5, 9, 5],
-        [6, 11, 3], [7, 27, 19], [8, 33, 25], [9, 40, 32], [10, 32, 24], [11, 35, 27],
-        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
-        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
-        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
-        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
-        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
-        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
-        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
-        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
-        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
-        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
-      ]);
-
-      var options = {
-        hAxis: {
-
-        },
-        vAxis: {
-
-        },
-        colors: ['#a52714', '#097138'],
-        crosshair: {
-          color: '#000',
-          trigger: 'selection'
-        }
-      };
-
-      var chart = new google.visualization.LineChart(document.getElementById('charts_div'));
-
-      chart.draw(data, options);
-      chart.setSelection([{ row: 38, column: 1 }]);
-
-    }
-
-  </script>
-
-  <script>
-    let plus = true;
-
-    function addNewClass(event) {
-      var element = event.target.id;
-      var temp = document.getElementById(`${element}`);
-      if (element != "plus1") {
-
-        if (plus === true) {
-
-          temp.classList.add('fa-plus-large_rotateEffect');
-          plus = false;
-
-        }
-
-        else if (plus === false) {
-          temp.classList.remove('fa-plus-large_rotateEffect');
-          plus = true;
-
-        }
-
-      }
-
-      else {
-
-        if (plus === true) {
-
-          temp.classList.remove('fa-plus-large_rotateEffect1');
-          plus = false;
-
-        }
-
-        else if (plus === false) {
-          temp.classList.add('fa-plus-large_rotateEffect1');
-          plus = true;
-
-        }
-      }
-    }
-  </script>
 
 </head>
 
@@ -248,12 +105,12 @@
               <span class="sidePanelMenu">MAIN MENU</span>
             </summary>
 
-            <details open>
-              <summary>
+            <details class="detail1" onclick="iconChange('detail1','plus1')">
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small "></span>
                 <span class="sidePanelMenu0">Dashboard</span>
-                <span class="fa-solid fa-plus-large fa-plus-large_rotateEffect1" id="plus1"
-                  onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus1"></span>
               </summary>
 
               <div class=" sidePanelMenu1">
@@ -340,11 +197,12 @@
               <span style="margin-left:16px" class="sidePanelMenu">LAYOUT PAGES</span>
             </summary>
 
-            <details>
-              <summary>
+            <details class="detail2" onclick="iconChange('detail2','plus2')">
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">General Pages</span>
-                <span class="fa-solid fa-plus-large" id="plus2" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus2"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -370,11 +228,12 @@
 
             </details>
 
-            <details>
-              <summary>
+            <details class="detail3" onclick="iconChange('detail3','plus3')">
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Cookie Consent</span>
-                <span class="fa-solid fa-plus-large" id="plus3" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus3"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -386,11 +245,12 @@
 
             </details>
 
-            <details>
-              <summary>
+            <details class="detail4" onclick="iconChange('detail4','plus4')">
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">eCommerce</span>
-                <span class="fa-solid fa-plus-large" id="plus4" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus4"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -416,12 +276,13 @@
 
             </details>
 
-            <details>
+            <details class="detail5" onclick="iconChange('detail5','plus5')">
 
-              <summary>
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Apps</span>
-                <span class="fa-solid fa-plus-large" id="plus5" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus5"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -433,11 +294,12 @@
 
             </details>
 
-            <details>
-              <summary>
+            <details class="detail6" onclick="iconChange('detail6','plus6')">
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Maps</span>
-                <span class="fa-solid fa-plus-large" id="plus6" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus6"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -449,11 +311,12 @@
 
             </details>
 
-            <details>
-              <summary>
+            <details class="detail7" onclick="iconChange('detail7','plus7')">
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Users</span>
-                <span class="fa-solid fa-plus-large" id="plus7" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus7"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -495,12 +358,13 @@
               <span class="sidePanelMenu">COMPONENTS</span>
             </summary>
 
-            <details>
+            <details class="detail8" onclick="iconChange('detail8','plus8')">
 
-              <summary>
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Basic UI</span>
-                <span class="fa-solid fa-plus-large" id="plus8" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus8"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -512,12 +376,13 @@
 
             </details>
 
-            <details>
+            <details class="detail9" onclick="iconChange('detail9','plus9')">
 
-              <summary>
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Advanced UI</span>
-                <span class="fa-solid fa-plus-large" id="plus9" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus9"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -529,12 +394,13 @@
 
             </details>
 
-            <details>
+            <details class="detail10" onclick="iconChange('detail10','plus10')">
 
-              <summary>
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Elements</span>
-                <span class="fa-solid fa-plus-large" id="plus10" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus10"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -546,12 +412,13 @@
 
             </details>
 
-            <details>
+            <details class="detail11" onclick="iconChange('detail11','plus11')">
 
-              <summary>
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Forms</span>
-                <span class="fa-solid fa-plus-large" id="plus11 " onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus11 "></span>
               </summary>
 
               <summary class="specialSummary">
@@ -563,12 +430,13 @@
 
             </details>
 
-            <details>
+            <details class="detail12" onclick="iconChange('detail12','plus12')">
 
-              <summary>
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Tables</span>
-                <span class="fa-solid fa-plus-large" id="plus12" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus12"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -580,12 +448,13 @@
 
             </details>
 
-            <details>
+            <details class="detail13" onclick="iconChange('detail13','plus13')">
 
-              <summary>
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Charts</span>
-                <span class="fa-solid fa-plus-large" id="plus13" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus13"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -597,12 +466,13 @@
 
             </details>
 
-            <details>
+            <details class="detail14" onclick="iconChange('detail14','plus14')">
 
-              <summary>
+
+              <summary class="summary_1">
                 <span class="fa-solid fa-circle-small"></span>
                 <span class="sidePanelMenu0">Widgets</span>
-                <span class="fa-solid fa-plus-large" id="plus14" onclick="addNewClass(event)"></span>
+                <span class="fa-solid fa-plus-large" id="plus14"></span>
               </summary>
 
               <summary class="specialSummary">
@@ -1497,12 +1367,12 @@
                 }
 
                 for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace("roundColor", " ");
+                  dots[i].className = dots[i].className.replace("roundColor", " ");
                 }
 
                 x[slideIndex - 1].style.display = "block";
 
-                dots[slideIndex-1].className += "roundColor";
+                dots[slideIndex - 1].className += "roundColor";
               }
 
 
@@ -1575,5 +1445,192 @@
   </div>
 
 </body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Year', 'Traffic1', 'Traffic2'],
+      [' ', 100, 40],
+      [' ', 57, 60],
+      [' ', 66, 12],
+      [' ', 103, 54]
+    ]);
+
+    var options = {
+
+      hAxis: {},
+      vAxis: { minValue: 0 }
+    };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['Effort', 'Amount given'],
+      ['Mozilla Firefox', 40],
+      ['Google Chrome', 30],
+      ['Brave', 30],
+
+    ]);
+
+    var options = {
+      pieHole: 0.7,
+      pieSliceTextStyle: {
+        color: 'black',
+      },
+      legend: 'none'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+    chart.draw(data, options);
+  }
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', { packages: ['corechart', 'line'] });
+  google.charts.setOnLoadCallback(drawCrosshairs);
+
+  function drawCrosshairs() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('number');
+    data.addColumn('number');
+    data.addColumn('number');
+
+    data.addRows([
+      [0, 0, 5], [1, 10, 5], [2, 23, 15], [3, 17, 9], [4, 18, 10], [5, 9, 5],
+      [6, 11, 3], [7, 27, 19], [8, 33, 25], [9, 40, 32], [10, 32, 24], [11, 35, 27],
+      [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+      [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+      [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+      [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+      [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+      [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+      [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+      [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+      [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+      [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+    ]);
+
+    var options = {
+      hAxis: {
+
+      },
+      vAxis: {
+
+      },
+      colors: ['#a52714', '#097138'],
+      crosshair: {
+        color: '#000',
+        trigger: 'selection'
+      }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('charts_div'));
+
+    chart.draw(data, options);
+    chart.setSelection([{ row: 38, column: 1 }]);
+
+  }
+
+</script>
+
+<script>
+
+  let plus = true;
+
+  function addNewClass(event) {
+
+    var temp
+
+    if (event.target) {
+      var element = event.target.id;
+      temp = document.getElementById(`${element}`);
+    }
+
+    else {
+      temp = event;
+    }
+
+
+    if (element != "plus1") {
+
+      if (plus === true) {
+
+        temp.classList.add('fa-plus-large_rotateEffect');
+        plus = false;
+
+      }
+
+      else if (plus === false) {
+        temp.classList.remove('fa-plus-large_rotateEffect');
+        plus = true;
+
+      }
+
+    }
+
+    else {
+
+      if (plus === true) {
+
+        temp.classList.remove('fa-plus-large_rotateEffect1');
+        plus = false;
+
+      }
+
+      else if (plus === false) {
+        temp.classList.add('fa-plus-large_rotateEffect1');
+        plus = true;
+
+      }
+    }
+  }
+</script>
+
+<script>
+
+  function iconChange(detailTagClass, iconId) {
+    const detailelement = document.getElementsByClassName(detailTagClass)[0]
+
+    var iconTag = document.getElementById(iconId);
+
+    let flag = true;
+
+    detailelement.addEventListener("toggle", (event) => {
+
+
+      if (detailelement.open) {
+        addNewClass(iconTag);
+        console.log(flag, "open")
+        flag = false;
+      }
+
+      else if (flag == false) {
+        console.log(flag, "close");
+        addNewClass(iconTag);
+        flag = true;
+      }
+
+    });
+  }
+</script>
+
 
 </html>
